@@ -1,14 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Arrays created for possible character choices
-/*
-var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',]
-var lowerCase = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',]
-var special = [ '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '[', ']', '{', '}', '~', '`', '/', '.',
-];
-*/
+// Created Arrays of possible character choices
 
 var numbers = "0123456789";
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -18,7 +11,7 @@ var special = "!@#$%^&*()";
 var userSelection = [];
 var password = [];
 
-// Function created
+// Function created to ask user which options and made consitional statements to ensure minimum option requiements were met.
 function questions() {
   var isValid = false;
   do {
@@ -58,7 +51,7 @@ function questions() {
       askSpecial: askSpecial
     }
   
-  
+  // This function was created to ensure the criteria for a strong password.
   if ((length < 8)||(length > 128))
   alert("Choose number between 8 and 128");
   else if((!askNumbers)&&(!askLowerCase)&&(!askUpperCase)&&(!askSpecial))
@@ -70,55 +63,16 @@ function questions() {
   return responses;
 }
 
-//steps
-// 1 chec that the answer of number of char password is valid
-//2
 
 
-// This function
+// This function joins the user responses and then creates the result which is the password.
 function generatePassword() {
   let passwordOptions = questions();
   let possibleCombo = [];
   let finalPassword = "";
-
-  //console.log('password ask numbers',responses.askNumbers)
-
-  /*
-  if (responses.askNumbers) {
-    for (var i of numbers) {
-      possibleCombo.push(i);
-    }
-  } 
-  if (responses.askLowerCase) {
-    for (var i of lowerCase)
-      possibleCombo.push(i);
-  }
-  if (responses.askUpperCase) {
-    for (var i of upperCase)
-      possibleCombo.push(i);
-  }
-  if (responses.askSpecial) {
-    for (var i of special)
-      possibleCombo.push(i);
-  }
-
-
-  console.log(possibleCombo);
-  */
 }
 
-//for (var i = 0; i < responses.length; i++) {
-  //finalPassword += possibleCombo[Math.floor(Math.random() * possibleCombo.length)];
 
-  //return finalPassword;
-
-//}
-
-//console.log(finalPassword);
-
-
-
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
 
